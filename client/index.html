@@ -6,14 +6,14 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
        
-        <script src="js/vendor.js"></script>
         <script src="js/index.js"></script>
     </head>
-    <body ng-app="dashboard">
+    <body ng-app="app">
         <div class="container">
             This is app wo
+            <d-images></d-images>
         <br />
-        <div ng-controller="dashboardController as ctrl">
+        <div>
             <div class="alert alert-danger" ng-class="{'alert-danger': !ctrl.github, 'alert-success': ctrl.github}">Is GitHub Up? <yep-nope check="ctrl.github"></yep-nope></div>
         </div>
         </div>
