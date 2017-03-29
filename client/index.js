@@ -1,20 +1,38 @@
 import angular from 'angular';
+import 'angular-ui-router';
 import imageComponent from './components/images/images.js';
 import imagesService from './components/images/imagesService.js';
 
-var app = angular.module('app', []);
-
+var app = angular.module('app', ['ui.router'])
 app.service('imagesService', imagesService);
 app.component('dImages', imageComponent);
+app.config(function($locationProvider, $compileProvider, $httpProvider, $stateProvider) {
+    $locationProvider.html5Mode(true);
 
-// console.log(imageComponent);
-// ;var angular = require('angular');
-//
-// import './components/images/images.js';
+    $compileProvider.debugInfoEnabled('<dev-only-angular-debug-info>');
 
-// var app = angular.module('app', []);
+    $httpProvider.defaults.cache = false;
 
 
-// app.config(($stateProvider)=> {
-//
-// })
+    console.log($stateProvider);
+    $stateProvider
+        .state('images', {
+            url: '/',
+            onEnter: function() {
+            },
+            views: {
+                'header': {
+                    template: 'header'
+                },
+                'content': {
+                    component: 'dImages'
+                }
+
+
+            }
+        })
+        .state('xxx', {
+            url: '/xxx',
+            template: 'nononono'
+        })
+});

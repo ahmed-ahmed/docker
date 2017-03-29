@@ -2,6 +2,7 @@ import template from './images.html';
 
 class ImageController{
     constructor(imagesService){
+        console.log('images controller');
         this.service = imagesService;
         imagesService.getImages().then((res)=>{
             this.images = res;
