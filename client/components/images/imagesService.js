@@ -10,6 +10,12 @@ class ImagesService {
         return this.$http.get('/api/images');
         // return [{imageId: `51542`}];
     }
+
+    createContainer(imageId) {
+    	return this.$http.post('/api/containers', {
+    		imageId: imageId
+    	});
+    }
 }
 
 export default ImagesService;

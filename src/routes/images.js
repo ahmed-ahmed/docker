@@ -4,9 +4,10 @@ var service = require('../services/docker.js');
 
 controller.get('/', (req, res) => {
     service.getImages().then(images => {
-        res.send(images);
+        res.json(images);
     })
 });
+
 
 
 module.exports = controller;
