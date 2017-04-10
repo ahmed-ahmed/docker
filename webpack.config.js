@@ -4,7 +4,7 @@ module.exports = {
     context: `${__dirname}/client`,
     entry: {
         index: `./index.js`,
-        vendor: [`angular`]
+        vendor: [`angular`, `angularjs-scroll-glue`]
     },
     devtool: "#inline-source-map",
     output: {

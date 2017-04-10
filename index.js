@@ -1,7 +1,12 @@
 var express = require('express');
+    
+
 var bodyParser = require('body-parser');
 
 var app = express();
+var server = require('http').createServer(app);  
+var io = require('socket.io')(server);
+
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -20,8 +25,11 @@ app.use(express.static('client'));
 
 
 app.get('/*', function(req, res){
-        res.sendFile(__dirname + '/client/index.html');
-
+    res.sendFile(__dirname + '/client/index.html');
 });
 
-app.listen(3000);
+// var server = 
+// io = io.listen(app)
+
+// app.listen(3000);
+server.listen(3000);  
